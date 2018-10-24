@@ -7,9 +7,9 @@ class Contact{
         }
 };
 
-let alenka = new Contact ('Аленка', '380001111111', 'mail1@mail.com', 'family');
-let anton = new Contact ('Антон', '380001111112', 'mail2@mail.com', 'family');
-let ira = new Contact ('Ира', '380001111113', 'mail3@mail.com', 'family');
+let alenka = new Contact ('Аленка', '380001111111', 'mail1@mail.com', "сім'я");
+let anton = new Contact ('Антон', '380001111112', 'mail2@mail.com', "сім'я");
+let ira = new Contact ('Ира', '380001111113', 'mail3@mail.com', "сім'я");
 
 class ContactManager{
     constructor(){
@@ -59,12 +59,79 @@ class ContactManager{
             this.listOfContacts = JSON.parse(localStorage.contacts);
     };
 
+		displayContactsAsTable(idOfContainer){
+			let container = document.querySelector("#" + idOfContainer);
+			container.innerHTML = "";
+
+			if (this.listOfContacts.length === 0) {
+				container.innerHTML = "<p>Немає контактів для відображення</p>";
+				return;
+			}
+
+			let table = document.createElement("table");
+			let row1 = table.insertRow();
+			row1.innerHTML = "<th>Ім'я</th>" +
+												"<th>Телефонний номер</th>" +
+												"<th>Поштова скринька</th>" +
+												"<th>Група</th>";
+			this.listOfContacts.forEach(function(currentContact){			
+				let row2 = table.insertRow();
+				row2.innerHTML = "<td>" + currentContact.name + "</td>" +
+												"<td>" + currentContact.phone + "</td>" +
+												"<td>" + currentContact.email + "</td>" +
+												"<td>" + currentContact.group + "</td>";
+			});
+			container.appendChild(table);
+		};
 }
 
-let cm = new ContactManager();
+window.onload = init;
 
-cm.add(alenka);
-cm.add(ira);
-cm.add(anton);
+let cm;
 
-cm.printToConsole();
+function init (){
+	cm = new ContactManager();
+	cm.add(alenka);
+	cm.add(ira);
+	cm.add(anton);
+	cm.sort();
+	cm.printToConsole();
+	cm.displayContactsAsTable("contacts");
+}
+
+function formSubmited(){
+	let name = document.querySelector("#name");
+	let phone = document.querySelector("#phone");
+	let email = document.querySelector("#email");
+	let group = document.querySelector("#group");
+
+	let newContact = new Contact(name.value, phone.value, email.value, group.value);
+	cm.add(newContact);
+
+	name.value = "";
+	phone.value = "";
+	email.value = "";
+	group.value = "";
+
+	cm.displayContactsAsTable("contacts");
+
+	return false;
+}
+
+function emptyList(){
+	cm.empty();
+	cm.displayContactsAsTable("contacts");
+}
+
+function loadList(){
+	cm.load();
+	cm.sort();
+	cm.displayContactsAsTable("contacts");
+}
+
+function saveList(){
+	cm.save();
+	cm.sort();
+	cm.displayContactsAsTable("contacts");
+}
+
