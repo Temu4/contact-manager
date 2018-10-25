@@ -71,15 +71,15 @@ class ContactManager{
 			let table = document.createElement("table");
 			let row1 = table.insertRow();
 			row1.innerHTML = "<th>Ім'я</th>" +
-												"<th>Телефонний номер</th>" +
-												"<th>Поштова скринька</th>" +
-												"<th>Група</th>";
+							"<th>Телефонний номер</th>" +
+							"<th>Поштова скринька</th>" +
+							"<th>Група</th>";
 			this.listOfContacts.forEach(function(currentContact){			
 				let row2 = table.insertRow();
 				row2.innerHTML = "<td>" + currentContact.name + "</td>" +
-												"<td>" + currentContact.phone + "</td>" +
-												"<td>" + currentContact.email + "</td>" +
-												"<td>" + currentContact.group + "</td>";
+								"<td>" + currentContact.phone + "</td>" +
+								"<td>" + currentContact.email + "</td>" +
+								"<td>" + currentContact.group + "</td>";
 			});
 			container.appendChild(table);
 		};
@@ -114,6 +114,7 @@ function formSubmited(){
 	group.value = "";
 
 	cm.displayContactsAsTable("contacts");
+	cm.printToConsole();
 
 	return false;
 }
@@ -125,13 +126,11 @@ function emptyList(){
 
 function loadList(){
 	cm.load();
-	cm.sort();
 	cm.displayContactsAsTable("contacts");
 }
 
 function saveList(){
 	cm.save();
-	cm.sort();
 	cm.displayContactsAsTable("contacts");
 }
 

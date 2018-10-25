@@ -37,43 +37,57 @@
 					</form>
 				</div>
 		</nav>
-				<div class="form-group">
-					<form onsubmit="return formSubmited();" role="form" class="form-horizontal">
-						<legend>Додати новий контакт</legend>
-							<div class="form-group">
-								<label for="name" class="col-sm-2 control-label">Ім'я:</label>
-								<div class="col-sm-10">
-									<input type="text" id="name" class="form-control">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="phone" class="col-sm-2 control-label">Телефон:</label>
-								<div class="col-sm-10">
-									<input type="number" id="phone" class="form-control">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="email" class="col-sm-2 control-label">Поштова скринька:</label>
-								<div class="col-sm-10">
-									<input type="email" id="email" class="form-control">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="group" class="col-sm-2 control-label">Група:</label>
-								<div class="col-sm-10">
-									<select id="group" class="form-control">
-										<option value=""></option>
-										<option value="Сім'я">Сім'я</option>
-										<option value="Друзі">Друзі</option>
-										<option value="Колеги">Колеги</option>
-										</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<input class="btn btn-success" type="submit" value="Додати контакт">
-							</div>
-					</form>
+
+					<div class="form-group">
+							<form class="class="form-horizontal" role="form">
+								<fieldset>
+								<legend>Додати новий контакт</legend>
+										<div class="form-group">
+												<label for="name" class="col-sm-2 control-label">Ім'я:</label>
+												<div class="col-sm-10">
+												 <input type="text" class="form-control" id="name" placeholder="Ім'я" >
+												</div>
+										</div>
+										<div class="form-group">
+												<label for="phone" class="col-sm-2 control-label">Телефон:</label>
+												<div class="col-sm-10">
+												<input type="number" class="form-control" id="phone" placeholder="0631724498" >
+												</div>
+										</div>
+										<div class="form-group">
+												<label for="email" class="col-sm-2 control-label">Поштова скринька:</label>
+												<div class="col-sm-10">
+												<input type="email" class="form-control" id="email" placeholder="mail@mail.com" >
+												</div>
+										</div>
+										<div class="form-group">
+												<label for="group" class="col-sm-2 control-label">Група:</label>
+												<div class="col-sm-10">
+													<select class="form-control" id="group">
+														<option value="none"></option>
+														<option value="family">Сім'я</option>
+														<option value="friends">Друзі</option>
+														<option value="workmates">Колеги</option>
+													</select>
+												</div>
+										</div>
+										<button class="btn btn-success" onclick="formSubmited()">Додати контакт</button>
+									</fieldset>
+									</form>
 				</div>
+
+				<!-- <h3>Менеджер контактів</h3>
+		<form onsubmit="return formSubmited();">
+			<fieldset>
+				<legend>Персональна інформація</legend>
+				<label for="name">Ім'я:<input type="text" id="name"></label>
+				<label for="phone">Телефон:<input type="number" id="phone"></label>
+				<label for="email">Поштова скринька:<input type="email" id="email"></label>
+				<label for="group">Група:<input type="text" id="group"></label>
+				<br>
+				<input type="submit" value="Додати контакт"></input>
+			</fieldset>
+		</form> -->
 
 		<h3>Список контактів</h3>
 		<div id="contacts"></div>
