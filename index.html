@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 		<title>Менеджер контактів</title>
 </head>
 <body>
@@ -38,30 +39,34 @@
 					</form>
 				</div>
 		</nav>
-				<div class="form-group">
+				<div class="form-group container">
 					<form onsubmit="return formSubmited();" role="form" class="form-horizontal">
 						<legend>Додати новий контакт</legend>
 							<div class="form-group">
-								<label for="name" class="col-sm-2 control-label">Ім'я:*</label>
-								<div class="col-sm-10">
+								<label for="name" class="col-sm-2 control-label">Ім'я:<span class="asterisk">* </span></label>
+								<div class="col-sm-10 inner-addon left-addon">
+									<i class="fas fa-user"></i>
 									<input type="text" id="name" class="form-control" placeholder="Ім'я контакту" required>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="phone" class="col-sm-12 col-lg-12 col-md-12 control-label">Телефон:* (у форматі 0**-***-**-**)</label>
-								<div class="col-sm-10">
+								<label for="phone" class="col-sm-12 col-lg-12 col-md-12 control-label">Телефон:<span class="asterisk">* </span>(у форматі 0**-***-**-**)</label>
+								<div class="col-sm-10 inner-addon left-addon">
+									<i class="fas fa-phone"></i>
 									<input type="tel" id="phone" class="form-control" placeholder="Моб. телефон" required pattern="0[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="email" class="col-sm-2 control-label">Поштова скринька:</label>
-								<div class="col-sm-10">
-									<input type="email" id="email" class="form-control" placeholder="mail@mail.com">
+								<div class="col-sm-10 inner-addon left-addon">
+									<i class="fas fa-envelope"></i>
+									<input type="email" id="email" class="form-control" placeholder="example@mail.com">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="group" class="col-sm-2 control-label">Група:</label>
-								<div class="col-sm-10">
+								<div class="col-sm-10 inner-addon left-addon">
+									<i class="fas fa-users"></i>
 									<select id="group" class="form-control">
 										<option value="">-група не обрана-</option>
 										<option value="Сім'я">Сім'я</option>
@@ -69,20 +74,21 @@
 										<option value="Колеги">Колеги</option>
 										</select>
 								</div>
+								<p><span class="asterisk">* </span>- поля, обов'язкові для заповнення</p>
 							</div>
-							<div class=class="col-sm-2 control-label">
+							<div class="col-sm-2 control-label">
 								<input class="btn btn-success" type="submit" value="Додати контакт">
 							</div>
 					</form>
 				</div>
 
-		<div id="contacts"></div>
+		<div id="contacts" class="container"></div>
 		<br>
-		<p>
-			<button class="btn btn-primary" role="button" onclick="saveList()">Зберегти</button>
-			<button class="btn btn-warning" onclick="loadList()">Завантажити список контактів</button>
-			<button class="btn btn-general" onclick="emptyList()">Очистити список</button>
-		</p>
+		<div class="container">
+				<button class="btn btn-primary" title="Зберегти список контактів" role="button" onclick="saveList()"><i class="fas fa-save"></i></button>
+				<button class="btn btn-warning" title="Загрузити контакти" onclick="loadList()"><i class="fas fa-download"></i></button>
+				<button class="btn btn-general" title="Очистити список" onclick="emptyList()"><i class="fas fa-trash-alt"></i></button>
+		</div>
 		<script src="js/script.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

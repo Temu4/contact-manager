@@ -1,14 +1,37 @@
 body{
 		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 		padding-top: 70px;
-		padding-left: 15px;
+		padding-bottom: 20px;
 }
 
 /* Buttons */
 button{
 	padding: 10px;
+	width: 100px;
+	margin: 20px;
 }
 
-div .contacts{
-	width: 100%;
+.asterisk{
+	color: red;
 }
+
+/* Icons */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .fas {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .fas  { left:  14px;}
+.right-addon .fas { right: 14px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.left-addon select  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
