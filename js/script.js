@@ -67,8 +67,10 @@ class ContactManager{
 				container.innerHTML = "<p>Немає контактів для відображення</p>";
 				return;
 			}
-
+			let caption = document.createElement("h3");
+			caption.innerHTML = "<caption>Список контактів</caption>";
 			let table = document.createElement("table");
+			table.className="table table-striped table-hover";
 			let row1 = table.insertRow();
 			row1.innerHTML = "<th>Ім'я</th>" +
 							"<th>Телефонний номер</th>" +
@@ -81,6 +83,7 @@ class ContactManager{
 								"<td>" + currentContact.email + "</td>" +
 								"<td>" + currentContact.group + "</td>";
 			});
+			container.appendChild(caption);
 			container.appendChild(table);
 		};
 }
