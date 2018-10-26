@@ -7,9 +7,9 @@ class Contact{
         }
 };
 
-let alenka = new Contact ('Аленка', '380001111111', 'mail1@mail.com', "сім'я");
-let anton = new Contact ('Антон', '380001111112', 'mail2@mail.com', "сім'я");
-let ira = new Contact ('Ира', '380001111113', 'mail3@mail.com', "сім'я");
+let alenka = new Contact ('Аленка', '067-213-45-54', 'mail1@mail.com', "Сім'я");
+let anton = new Contact ('Антон', '091-111-65-66', 'mail2@mail.com', "Сім'я");
+let ira = new Contact ('Ира', '063-713-88-51', 'mail3@mail.com', "Сім'я");
 
 class ContactManager{
     constructor(){
@@ -129,10 +129,12 @@ function emptyList(){
 
 function loadList(){
 	cm.load();
+	cm.sort();
 	cm.displayContactsAsTable("contacts");
 }
 
 function saveList(){
+	cm.sort();
 	cm.save();
 	cm.displayContactsAsTable("contacts");
 }
