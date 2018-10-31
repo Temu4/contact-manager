@@ -1827,11 +1827,11 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-	background-color: rgba(0, 0, 0, 0.329)
+	background-color: rgba(0, 0, 0, 0.158)
 }
 
 .table-hover tbody tr:hover {
-	background-color: rgba(90, 156, 107, 0.466)
+	background-color: rgba(108, 197, 96, 0.534)
 }
 
 .table-primary,
@@ -2647,7 +2647,11 @@ fieldset:disabled a.btn {
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0069d9;
-	border-color: #0062cc
+	border-color: #0062cc;
+	font-style: italic;
+}
+.btn-primary i:hover {
+	color: #16181b;
 }
 
 .btn-primary.focus,
@@ -2723,7 +2727,8 @@ fieldset:disabled a.btn {
 .btn-success:hover {
 	color: #fff;
 	background-color: #218838;
-	border-color: #1e7e34
+	border-color: #1e7e34;
+	font-style: italic;
 }
 
 .btn-success.focus,
@@ -2799,7 +2804,11 @@ fieldset:disabled a.btn {
 .btn-warning:hover {
 	color: #212529;
 	background-color: #e0a800;
-	border-color: #d39e00
+	border-color: #d39e00;
+	font-style: italic;
+}
+.btn-warning i:hover {
+	color: #fefeff;
 }
 
 .btn-warning.focus,
@@ -2837,7 +2846,11 @@ fieldset:disabled a.btn {
 .btn-danger:hover {
 	color: #fff;
 	background-color: #c82333;
-	border-color: #bd2130
+	border-color: #bd2130;
+	font-style: italic;
+}
+.btn-danger i:hover {
+	color: #ffc107;
 }
 
 .btn-danger.focus,
@@ -3019,26 +3032,26 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success {
-	color: #28a745;
+	color: #dfdb1d;
 	background-color: transparent;
 	background-image: none;
-	border-color: #28a745
+	border-color: #dfdb1d
 }
 
 .btn-outline-success:hover {
 	color: #fff;
-	background-color: #28a745;
-	border-color: #28a745
+	background-color: #dfdb1d;
+	border-color: #dfdb1d
 }
 
 .btn-outline-success.focus,
 .btn-outline-success:focus {
-	box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5)
+	box-shadow: 0 0 0 .2rem rgba(165, 167, 40, 0.5)
 }
 
 .btn-outline-success.disabled,
 .btn-outline-success:disabled {
-	color: #28a745;
+	color: #dfdb1d;
 	background-color: transparent
 }
 
@@ -3046,15 +3059,56 @@ fieldset:disabled a.btn {
 .btn-outline-success:not(:disabled):not(.disabled):active,
 .show>.btn-outline-success.dropdown-toggle {
 	color: #fff;
-	background-color: #28a745;
-	border-color: #28a745
+	background-color: #dfdb1d;
+	border-color: #dfdb1d
 }
 
 .btn-outline-success:not(:disabled):not(.disabled).active:focus,
 .btn-outline-success:not(:disabled):not(.disabled):active:focus,
 .show>.btn-outline-success.dropdown-toggle:focus {
-	box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5)
+	box-shadow: 0 0 0 .2rem rgba(165, 167, 40, 0.5)
 }
+
+/* Cansel find button */
+.btn-outline-cancel {
+	color: #dfdb1d;
+	background-color: transparent;
+	background-image: none;
+	border-color: none;
+	width: 15px;
+}
+
+.btn-outline-cancel:hover {
+	color: rgb(245, 11, 11);
+	background-color: none;
+	border-color: none;
+}
+
+.btn-outline-cancel.focus,
+.btn-outline-cancel:focus {
+	box-shadow: 0 0 0 .2rem rgba(165, 167, 40, 0.5)
+}
+
+.btn-outline-cancel.disabled,
+.btn-outline-cancel:disabled {
+	color: #dfdb1d;
+	background-color: transparent
+}
+
+.btn-outline-cancel:not(:disabled):not(.disabled).active,
+.btn-outline-cancel:not(:disabled):not(.disabled):active,
+.show>.btn-outline-cancel.dropdown-toggle {
+	color: #fff;
+	background-color: none;
+	border-color: none;
+}
+
+.btn-outline-cancel:not(:disabled):not(.disabled).active:focus,
+.btn-outline-cancel:not(:disabled):not(.disabled):active:focus,
+.show>.btn-outline-cancel.dropdown-toggle:focus {
+	box-shadow: 0 0 0 .2rem rgba(165, 167, 40, 0.5)
+}
+
 
 .btn-outline-info {
 	color: #17a2b8;
