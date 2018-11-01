@@ -4,12 +4,83 @@ body{
     padding-bottom: 20px;
 }
 
-/* Buttons */
-button{
-	padding: 20px;
-	width: 120px;
-	margin: 20px;
+/* BUTTONS:*/
+/* --Save */
+.btn-outline-save {
+	color: #085283;
+	background-color: transparent;
+	background-image: none;
+	border-color: #085283
 }
+
+.btn-outline-save:hover {
+	color: #fff;
+	background-color: #085283;
+	border-color: #085283
+}
+
+.btn-outline-save.focus,
+.btn-outline-save:focus {
+	box-shadow: 0 0 0 .2rem rgba(40, 131, 167, 0.5)
+}
+
+.btn-outline-save.disabled,
+.btn-outline-save:disabled {
+	color: #085283;
+	background-color: transparent
+}
+
+/* --Download */
+.btn-outline-download {
+	color: #4d4c12;
+	background-color: transparent;
+	background-image: none;
+	border-color: #fcf811
+}
+
+.btn-outline-download:hover {
+	color: rgb(31, 28, 28);
+	background-color: #fcf811;
+	border-color: #fcf811
+}
+
+.btn-outline-download.focus,
+.btn-outline-download:focus {
+	box-shadow: 0 0 0 .2rem rgba(140, 167, 40, 0.5)
+}
+
+.btn-outline-download.disabled,
+.btn-outline-download:disabled {
+	color: #fcf811;
+	background-color: transparent
+}
+
+
+/* --Delete */
+.btn-outline-delete {
+	color: #f70a0a;
+	background-color: transparent;
+  background-image: none;
+	border-color: #f70a0a
+}
+
+.btn-outline-delete:hover {
+	color: rgb(37, 10, 10);
+	background-color: #f70a0a;
+	border-color: #f70a0a
+}
+
+.btn-outline-delete.focus,
+.btn-outline-delete:focus {
+	box-shadow: 0 0 0 .2rem rgba(167, 70, 40, 0.5)
+}
+
+.btn-outline-delete.disabled,
+.btn-outline-delete:disabled {
+	color: #f70a0a;
+	background-color: transparent
+}
+
 
 .asterisk{
 	color: red;

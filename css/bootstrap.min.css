@@ -2647,11 +2647,7 @@ fieldset:disabled a.btn {
 .btn-primary:hover {
 	color: #fff;
 	background-color: #0069d9;
-	border-color: #0062cc;
-	font-style: italic;
-}
-.btn-primary i:hover {
-	color: #16181b;
+	border-color: #0062cc
 }
 
 .btn-primary.focus,
@@ -2805,10 +2801,6 @@ fieldset:disabled a.btn {
 	color: #212529;
 	background-color: #e0a800;
 	border-color: #d39e00;
-	font-style: italic;
-}
-.btn-warning i:hover {
-	color: #fefeff;
 }
 
 .btn-warning.focus,
@@ -2847,10 +2839,6 @@ fieldset:disabled a.btn {
 	color: #fff;
 	background-color: #c82333;
 	border-color: #bd2130;
-	font-style: italic;
-}
-.btn-danger i:hover {
-	color: #ffc107;
 }
 
 .btn-danger.focus,
