@@ -45,13 +45,13 @@
 		</div>
 		<br>
 		<div class="container">
-				<button class="btn btn-primary" title="Зберегти список контактів" role="button" onclick="saveList(); func();"><i class="fas fa-save"></i> Зберегти</button>
-				<button class="btn btn-warning" title="Загрузити контакти" onclick="loadList(); func();"><i class="fas fa-download"></i> Загрузити</button>
-				<button class="btn btn-danger" title="Очистити список" onclick="emptyList(); func();"><i class="fas fa-trash-alt"></i> Очистити</button>
+				<button class="btn btn-primary col-xs-4" title="Зберегти список контактів" role="button" onclick="saveList(); func();"><i class="fas fa-save"></i> Зберегти</button>
+				<button class="btn btn-warning col-xs-4" title="Загрузити контакти" onclick="loadList(); func();"><i class="fas fa-download"></i> Загрузити</button>
+				<button class="btn btn-danger col-xs-4" title="Очистити список" onclick="emptyList(); func();"><i class="fas fa-trash-alt"></i> Очистити</button>
 		</div>
 		<br>
 				<div class="form-group container add-contact">
-					<form onsubmit="return formSubmited(); func();" role="form" class="form-horizontal">
+					<form onsubmit="return formSubmited(); func();" role="form" class="form-horizontal col-xs-12">
 						<legend>Додати новий контакт</legend>
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">Ім'я:<span class="asterisk">* </span></label>
