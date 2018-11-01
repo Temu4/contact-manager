@@ -72,16 +72,18 @@ class ContactManager{
 			let table = document.createElement("table");
 			table.className="table table-striped table-hover";
 			let row1 = table.insertRow();
-			row1.innerHTML = "<th>Ім'я</th>" +
-							"<th>Телефонний номер</th>" +
-							"<th>Поштова скринька</th>" +
-							"<th>Група</th>";
+			row1.className = "row";
+			row1.innerHTML = "<th class=\"col-2\">Ім'я</th>" +
+							"<th class=\"col-4\">Телефонний номер</th>" +
+							"<th class=\"col-4\">Поштова скринька</th>" +
+							"<th class=\"col-2\">Група</th>";
 			this.listOfContacts.forEach(function(currentContact){			
 				let row2 = table.insertRow();
-				row2.innerHTML = "<td>" + currentContact.name + "</td>" +
-								"<td>" + currentContact.phone + "</td>" +
-								"<td>" + currentContact.email + "</td>" +
-								"<td>" + currentContact.group + "</td>";
+				row2.className = "row";
+				row2.innerHTML = "<td class=\"col-2\">" + currentContact.name + "</td>" +
+								"<td class=\"col-4\">" + currentContact.phone + "</td>" +
+								"<td class=\"col-4\">" + currentContact.email + "</td>" +
+								"<td class=\"col-2\">" + currentContact.group + "</td>";
 			});
 			container.appendChild(caption);
 			container.appendChild(table);
