@@ -70,7 +70,7 @@ class ContactManager{
 			let caption = document.createElement("h3");
 			caption.innerHTML = "<caption>Список контактів</caption>";
 			let table = document.createElement("table");
-			table.className="table table-striped table-hover";
+			table.className="table table-striped table-hover container-fluid";
 			let row1 = table.insertRow();
 			row1.className = "row";
 			row1.innerHTML = "<th class=\"col-2\">Ім'я</th>" +
