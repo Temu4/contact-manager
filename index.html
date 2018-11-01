@@ -44,13 +44,13 @@
 		<div id="contacts" class="container"></div>
 		<br>
 		<div class="container">
-				<button class="btn btn-primary" title="Зберегти список контактів" role="button" onclick="saveList()"><i class="fas fa-save"></i> Зберегти</button>
-				<button class="btn btn-warning" title="Загрузити контакти" onclick="loadList()"><i class="fas fa-download"></i> Загрузити</button>
-				<button class="btn btn-danger" title="Очистити список" onclick="emptyList()"><i class="fas fa-trash-alt"></i> Очистити</button>
+				<button class="btn btn-primary" title="Зберегти список контактів" role="button" onclick="saveList(); func();"><i class="fas fa-save"></i> Зберегти</button>
+				<button class="btn btn-warning" title="Загрузити контакти" onclick="loadList(); func();"><i class="fas fa-download"></i> Загрузити</button>
+				<button class="btn btn-danger" title="Очистити список" onclick="emptyList(); func();"><i class="fas fa-trash-alt"></i> Очистити</button>
 		</div>
 		<br>
 				<div class="form-group container add-contact">
-					<form onsubmit="return formSubmited();" role="form" class="form-horizontal">
+					<form onsubmit="return formSubmited(); func();" role="form" class="form-horizontal">
 						<legend>Додати новий контакт</legend>
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">Ім'я:<span class="asterisk">* </span></label>
@@ -95,7 +95,7 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/find-contact.js"></script>
 		<script src="js/jquery.mask.js"></script>
+		<script src="js/find-contact.js"></script>
 	</body>
 </html>
