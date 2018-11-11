@@ -7,9 +7,10 @@ class Contact{
         }
 };
 
-let alenka = new Contact ('Аленка', '(067) 213-45-54', 'mail1@mail.com', "Сім'я");
-let anton = new Contact ('Антон', '(063) 111-65-66', 'mail2@mail.com', "Сім'я");
-let ira = new Contact ('Ира', '(095) 713-88-51', 'mail3@mail.com', "Сім'я");
+//just samples contacts
+let alenka = new Contact ('Аленка', '(067) 213-45-54', 'mail1@mail.com', 'Сім\'я');
+let anton = new Contact ('Антон', '(063) 111-65-66', 'mail2@mail.com', 'Сім\'я');
+let ira = new Contact ('Ира', '(095) 713-88-51', 'mail3@mail.com', 'Сім\'я');
 
 class ContactManager{
     constructor(){
@@ -26,27 +27,28 @@ class ContactManager{
     
     remove(contact){
         for (let i = 0; i < this.listOfContacts.length; i++){
-            let c = this.listOfContacts[i];
-            if (c.phone === contact.phone){
+            let client = this.listOfContacts[i];
+            if (client.phone === contact.phone){
                 this.listOfContacts.splice(i, i);
                 break;
             }
         }
     };
-    
+   //for testing 
     printToConsole(){
-        this.listOfContacts.forEach(function(c){
-            console.log(c.name);
+        this.listOfContacts.forEach(function(contact){
+            console.log(contact.name);
         });
     };
     
     sort(){
         this.listOfContacts.sort(ContactManager.compareByName);
     };
-    
-    static compareByName (a,b){
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
+		
+		//put contacts in alphabetical order
+    static compareByName (contact,nextContact){
+        if (contact.name < nextContact.name) return -1;
+        if (contact.name > nextContact.name) return 1;
         else return 0;
     };
     
@@ -60,30 +62,30 @@ class ContactManager{
     };
 
 		displayContactsAsTable(idOfContainer){
-			let container = document.querySelector("#" + idOfContainer);
-			container.innerHTML = "";
+			let container = document.querySelector('#' + idOfContainer);
+			container.innerHTML = '';
 
 			if (this.listOfContacts.length === 0) {
-				container.innerHTML = "<p>Немає контактів для відображення</p>";
+				container.innerHTML = '<p>Немає контактів для відображення</p>'
 				return;
 			}
-			let caption = document.createElement("h3");
-			caption.innerHTML = "<caption>Список контактів</caption>";
-			let table = document.createElement("table");
-			table.className="table table-striped table-hover container-fluid";
+			let caption = document.createElement('h3');
+			caption.innerHTML = '<caption>Список контактів</caption>';
+			let table = document.createElement('table');
+			table.className='table table-striped table-hover container-fluid';
 			let row1 = table.insertRow();
-			row1.className = "row";
-			row1.innerHTML = "<th class=\"col-2\">Ім'я</th>" +
-							"<th class=\"col-4\">Телефонний номер</th>" +
-							"<th class=\"col-4\">Поштова скринька</th>" +
-							"<th class=\"col-2\">Група</th>";
+			row1.className = 'row';
+			row1.innerHTML = '<th class=\'col-2\'>Ім\'я</th>' +
+							'<th class=\'col-4\'>Телефонний номер</th>' +
+							'<th class=\'col-4\'>Поштова скринька</th>' +
+							'<th class=\'col-2\'>Група</th>';
 			this.listOfContacts.forEach(function(currentContact){			
 				let row2 = table.insertRow();
-				row2.className = "row";
-				row2.innerHTML = "<td class=\"col-2\">" + currentContact.name + "</td>" +
-								"<td class=\"col-4\">" + currentContact.phone + "</td>" +
-								"<td class=\"col-4\">" + currentContact.email + "</td>" +
-								"<td class=\"col-2\">" + currentContact.group + "</td>";
+				row2.className = 'row';
+				row2.innerHTML = '<td class=\'col-2\'>' + currentContact.name + '</td>' +
+								'<td class=\'col-4\'>' + currentContact.phone + '</td>' +
+								'<td class=\'col-4\'>' + currentContact.email + '</td>' +
+								'<td class=\'col-2\'>' + currentContact.group + '</td>';
 			});
 			container.appendChild(caption);
 			container.appendChild(table);
@@ -92,8 +94,10 @@ class ContactManager{
 
 window.onload = init;
 
+//to ContactManager
 let cm;
 
+//default content
 function init (){
 	cm = new ContactManager();
 	cm.add(alenka);
@@ -101,9 +105,10 @@ function init (){
 	cm.add(anton);
 	cm.sort();
 	cm.printToConsole();
-	cm.displayContactsAsTable("contacts");
+	cm.displayContactsAsTable('contacts');
 }
 
+//for adding new contact from the user
 function formSubmited(){
 	let name = document.querySelector("#name");
 	let phone = document.querySelector("#phone");
@@ -124,21 +129,24 @@ function formSubmited(){
 	return false;
 }
 
+//for erase button
 function emptyList(){
 	cm.empty();
-	cm.displayContactsAsTable("contacts");
+	cm.displayContactsAsTable('contacts');
 }
 
+//for load button
 function loadList(){
 	cm.load();
 	cm.sort();
-	cm.displayContactsAsTable("contacts");
+	cm.displayContactsAsTable('contacts');
 }
 
+//for save button
 function saveList(){
 	cm.sort();
 	cm.save();
-	cm.displayContactsAsTable("contacts");
+	cm.displayContactsAsTable('contacts');
 }
 
 
